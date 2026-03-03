@@ -3,6 +3,8 @@ extends CharacterBody2D
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 const BOUNDARY_MARGIN = 32  # Padding from edges to prevent sprite from going off-screen
+var can_move: bool = true
+var direction:int = 1
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("default")
@@ -30,29 +32,20 @@ func setup_collision(tex: Texture2D) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	#if not is_on_floor():
-	#	velocity += get_gravity() * delta
-
-	# Handle jump.
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-	#	velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var x_direction := Input.get_axis("ui_left", "ui_right")
-	if x_direction:
-		velocity.x = x_direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
-	var y_direction := Input.get_axis("ui_up", "ui_down")
-	if y_direction:
-		velocity.y = y_direction * SPEED
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-	
-	move_and_slide()
+	if can_move == true:
+		var x_direction := Input.get_axis("ui_left", "ui_right")
+		if x_direction:
+			velocity.x = x_direction * SPEED * direction
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+		var y_direction := Input.get_axis("ui_up", "ui_down")
+		if y_direction:
+			velocity.y = y_direction * SPEED * direction
+		else:
+			velocity.y = move_toward(velocity.y, 0, SPEED)
+		
+		move_and_slide()
 	
 	# Clamp the spaceship position to stay within the viewport
 	var viewport_rect = get_viewport_rect()

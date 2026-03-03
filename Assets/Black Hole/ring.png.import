@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brciv2okw2vww"
-path="res://.godot/imported/meteorBrown_small2.png-ad2ab59751b43beacb229cd5dbe1d055.ctex"
+uid="uid://dabsq6d2e3dum"
+path="res://.godot/imported/ring.png-1e9f85cbde56ae1cc5a3b74f4ac74dd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/kenney_space-shooter-redux/PNG/Meteors/meteorBrown_small2.png"
-dest_files=["res://.godot/imported/meteorBrown_small2.png-ad2ab59751b43beacb229cd5dbe1d055.ctex"]
+source_file="res://Assets/Black Hole/ring.png"
+dest_files=["res://.godot/imported/ring.png-1e9f85cbde56ae1cc5a3b74f4ac74dd7.ctex"]
 
 [params]
 

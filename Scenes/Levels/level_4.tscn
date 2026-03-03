@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://x4kifmi5rxwi"]
+
+[ext_resource type="Script" uid="uid://1ipy54587aws" path="res://Scripts/Levels/level_4.gd" id="1_h0uxt"]
+[ext_resource type="PackedScene" uid="uid://cciox88dt8rdj" path="res://Scenes/background.tscn" id="2_h0uxt"]
+[ext_resource type="PackedScene" uid="uid://crrlk5rh4w4y3" path="res://Scenes/space_ship.tscn" id="3_keyqw"]
+[ext_resource type="PackedScene" uid="uid://bg2njuc7hf3w7" path="res://Scenes/matereos.tscn" id="4_gsxik"]
+[ext_resource type="PackedScene" uid="uid://c0atdy76ahqp" path="res://Scenes/star.tscn" id="5_3asqb"]
+[ext_resource type="Script" uid="uid://b0kof4ns5cwnu" path="res://Scripts/drag.gd" id="6_slbhm"]
+[ext_resource type="Script" uid="uid://8ws0ufstpot0" path="res://Scripts/Components/float.gd" id="7_i5g5g"]
+[ext_resource type="PackedScene" uid="uid://cl8tfo6skfq5s" path="res://Scenes/black_hole.tscn" id="8_h0uxt"]
+[ext_resource type="Script" uid="uid://cyyvw35ypmhhu" path="res://addons/health_bar_x/runtime/health_bar_x_2d.gd" id="9_keyqw"]
+
+[node name="Level 4" type="Node2D" unique_id=793902484]
+script = ExtResource("1_h0uxt")
+
+[node name="Background" parent="." unique_id=1763993793 instance=ExtResource("2_h0uxt")]
+
+[node name="SpaceShip" parent="." unique_id=2056339405 instance=ExtResource("3_keyqw")]
+position = Vector2(91, 352)
+
+[node name="Matereos" parent="." unique_id=1268567084 instance=ExtResource("4_gsxik")]
+position = Vector2(431, 221)
+
+[node name="Star" parent="." unique_id=486718945 instance=ExtResource("5_3asqb")]
+position = Vector2(1023, 112)
+
+[node name="GravityDrag" type="Node" parent="." unique_id=433243473 node_paths=PackedStringArray("spaceship", "metereos")]
+script = ExtResource("6_slbhm")
+spaceship = NodePath("../SpaceShip")
+metereos = NodePath("../Matereos")
+drag_strength = 20.0
+metadata/_custom_type_script = "uid://b0kof4ns5cwnu"
+
+[node name="Float" type="Node" parent="." unique_id=1188732342 node_paths=PackedStringArray("star")]
+script = ExtResource("7_i5g5g")
+star = NodePath("../Star")
+
+[node name="Float2" type="Node" parent="." unique_id=193257576 node_paths=PackedStringArray("star")]
+script = ExtResource("7_i5g5g")
+star = NodePath("../Matereos")
+float_height = 5.0
+float_duration = 5.0
+pulse_speed = 1.0
+pulse_amount = 0.0
+rotation_speed = 0.1
+metadata/_custom_type_script = "uid://8ws0ufstpot0"
+
+[node name="Black Hole" parent="." unique_id=1262326197 instance=ExtResource("8_h0uxt")]
+position = Vector2(1062, 553)
+scale = Vector2(1e-05, 1e-05)
+
+[node name="GravityDrag2" type="Node" parent="." unique_id=1402382600 node_paths=PackedStringArray("spaceship", "metereos")]
+script = ExtResource("6_slbhm")
+spaceship = NodePath("../SpaceShip")
+metereos = NodePath("../Black Hole")
+drag_strength = 50.0
+metadata/_custom_type_script = "uid://b0kof4ns5cwnu"
+
+[node name="HealthBarX2D" type="Node2D" parent="." unique_id=424942320]
+script = ExtResource("9_keyqw")
+metadata/_custom_type_script = "uid://cyyvw35ypmhhu"
+
+[connection signal="body_entered" from="Matereos" to="." method="_on_matereos_body_entered"]
+[connection signal="body_entered" from="Star" to="." method="_on_star_body_entered"]
+[connection signal="body_entered" from="Black Hole" to="." method="_on_black_hole_body_entered"]

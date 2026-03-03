@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cl8tfo6skfq5s"]
+
+[ext_resource type="Texture2D" uid="uid://mc33y0uweqsm" path="res://Assets/Black Hole/hole.png" id="1_wn18u"]
+[ext_resource type="Texture2D" uid="uid://50g8i8dyxdn8" path="res://Assets/Black Hole/dmoke.png" id="2_ratl1"]
+[ext_resource type="Texture2D" uid="uid://dabsq6d2e3dum" path="res://Assets/Black Hole/ring.png" id="3_8ovth"]
+[ext_resource type="Script" uid="uid://8ws0ufstpot0" path="res://Scripts/Components/float.gd" id="4_hx7ua"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tjypq"]
+radius = 163.62457
+
+[node name="Black Hole" type="Area2D" unique_id=1559379177]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=381162858]
+position = Vector2(0, -2)
+texture = ExtResource("1_wn18u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=428777558]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_tjypq")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1544314937]
+position = Vector2(0, -2)
+texture = ExtResource("2_ratl1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1436129389]
+position = Vector2(0, -2)
+texture = ExtResource("3_8ovth")
+
+[node name="Float3" type="Node" parent="." unique_id=777257325 node_paths=PackedStringArray("star")]
+script = ExtResource("4_hx7ua")
+star = NodePath("../Sprite2D3")
+float_height = 0.0
+rotation_speed = 3.0
+metadata/_custom_type_script = "uid://8ws0ufstpot0"
+
+[node name="Float4" type="Node" parent="." unique_id=1414660223 node_paths=PackedStringArray("star")]
+script = ExtResource("4_hx7ua")
+star = NodePath("../Sprite2D2")
+float_height = 0.0
+rotation_speed = 6.0
+metadata/_custom_type_script = "uid://8ws0ufstpot0"
