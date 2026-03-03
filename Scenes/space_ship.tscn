@@ -1,0 +1,52 @@
+[gd_scene load_steps=10 format=3 uid="uid://crrlk5rh4w4y3"]
+
+[ext_resource type="Texture2D" uid="uid://cegjct2b5hhg5" path="res://Assets/kenney_space-shooter-redux/PNG/playerShip2_red.png" id="1_65coa"]
+[ext_resource type="Script" uid="uid://cm0mrgf2i8ncc" path="res://Scripts/space_ship.gd" id="1_yepno"]
+[ext_resource type="Texture2D" uid="uid://dfgafqqxru5oa" path="res://Assets/kenney_space-shooter-redux/PNG/Damage/playerShip2_damage3.png" id="2_5dvug"]
+[ext_resource type="Texture2D" uid="uid://t752x1bc8urh" path="res://Assets/kenney_space-shooter-redux/PNG/Damage/playerShip2_damage2.png" id="3_m1d2h"]
+[ext_resource type="Texture2D" uid="uid://d11hwqsio3iq6" path="res://Assets/kenney_space-shooter-redux/PNG/Damage/playerShip1_damage1.png" id="4_pu3uw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3pvv"]
+atlas = ExtResource("2_5dvug")
+region = Rect2(0, 0, 112, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opnsb"]
+atlas = ExtResource("3_m1d2h")
+region = Rect2(0, 0, 112, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ehuy"]
+atlas = ExtResource("4_pu3uw")
+region = Rect2(0, 0, 99, 76)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yepno"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3pvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opnsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ehuy")
+}],
+"loop": false,
+"name": &"crash",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_65coa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SpaceShip" type="CharacterBody2D"]
+rotation = 1.5707964
+script = ExtResource("1_yepno")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yepno")
+autoplay = "default"

@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbbykb0f43jsf"]
+
+[ext_resource type="Script" uid="uid://p1gca44ml0ju" path="res://Scripts/Levels/level_1.gd" id="1_fphuk"]
+[ext_resource type="PackedScene" uid="uid://cciox88dt8rdj" path="res://Scenes/background.tscn" id="2_pnnky"]
+[ext_resource type="PackedScene" uid="uid://crrlk5rh4w4y3" path="res://Scenes/space_ship.tscn" id="3_blpqv"]
+[ext_resource type="PackedScene" uid="uid://bg2njuc7hf3w7" path="res://Scenes/matereos.tscn" id="4_1jlnc"]
+[ext_resource type="PackedScene" uid="uid://c0atdy76ahqp" path="res://Scenes/star.tscn" id="5_u40f0"]
+[ext_resource type="Script" uid="uid://b0kof4ns5cwnu" path="res://Scripts/drag.gd" id="6_0x4y1"]
+[ext_resource type="Script" uid="uid://8ws0ufstpot0" path="res://Scripts/Components/float.gd" id="7_uqiic"]
+
+[node name="Level 1" type="Node2D"]
+script = ExtResource("1_fphuk")
+
+[node name="Background" parent="." instance=ExtResource("2_pnnky")]
+
+[node name="SpaceShip" parent="." instance=ExtResource("3_blpqv")]
+position = Vector2(91, 352)
+
+[node name="Matereos" parent="." instance=ExtResource("4_1jlnc")]
+position = Vector2(453.79053, 321.40698)
+
+[node name="Star" parent="." instance=ExtResource("5_u40f0")]
+position = Vector2(610, 322)
+
+[node name="GravityDrag" type="Node" parent="." node_paths=PackedStringArray("spaceship", "metereos")]
+script = ExtResource("6_0x4y1")
+spaceship = NodePath("../Matereos")
+metereos = NodePath("../SpaceShip")
+drag_strength = 200.0
+metadata/_custom_type_script = "uid://b0kof4ns5cwnu"
+
+[node name="Float" type="Node" parent="." node_paths=PackedStringArray("star")]
+script = ExtResource("7_uqiic")
+star = NodePath("../Star")
+
+[node name="Float2" type="Node" parent="." node_paths=PackedStringArray("star")]
+script = ExtResource("7_uqiic")
+star = NodePath("../Matereos")
+float_height = 5.0
+float_duration = 5.0
+pulse_speed = 1.0
+pulse_amount = 0.0
+rotation_speed = 0.1
+metadata/_custom_type_script = "uid://8ws0ufstpot0"
+
+[connection signal="body_entered" from="Matereos" to="." method="_on_matereos_body_entered"]
+[connection signal="body_entered" from="Star" to="." method="_on_star_body_entered"]

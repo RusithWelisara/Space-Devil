@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cciox88dt8rdj"]
+
+[ext_resource type="Texture2D" uid="uid://ypa0dl1bpq47" path="res://Assets/space_background_pack/space_background_pack/Assets/Blue Version/blue-preview.png" id="1_sn1xx"]
+
+[node name="Background" type="Node2D"]
+
+[node name="BluePreview" type="Sprite2D" parent="."]
+position = Vector2(577, 321)
+scale = Vector2(1.4191177, 1.3375)
+texture = ExtResource("1_sn1xx")

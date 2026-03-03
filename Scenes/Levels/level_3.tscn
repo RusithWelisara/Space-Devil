@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://cc4fhws7yjl4d"]
+
+[ext_resource type="Script" uid="uid://p1gca44ml0ju" path="res://Scripts/Levels/level_1.gd" id="1_167vu"]
+[ext_resource type="PackedScene" uid="uid://cciox88dt8rdj" path="res://Scenes/background.tscn" id="2_x1k1j"]
+[ext_resource type="PackedScene" uid="uid://crrlk5rh4w4y3" path="res://Scenes/space_ship.tscn" id="3_4ahh4"]
+[ext_resource type="PackedScene" uid="uid://bg2njuc7hf3w7" path="res://Scenes/matereos.tscn" id="4_dl55b"]
+[ext_resource type="PackedScene" uid="uid://c0atdy76ahqp" path="res://Scenes/star.tscn" id="5_osqx1"]
+[ext_resource type="Script" uid="uid://8ws0ufstpot0" path="res://Scripts/Components/float.gd" id="7_md4x4"]
+
+[node name="Level 1" type="Node2D"]
+script = ExtResource("1_167vu")
+
+[node name="Background" parent="." instance=ExtResource("2_x1k1j")]
+
+[node name="SpaceShip" parent="." instance=ExtResource("3_4ahh4")]
+position = Vector2(91, 352)
+
+[node name="Matereos" parent="." instance=ExtResource("4_dl55b")]
+position = Vector2(522, 347)
+
+[node name="Star" parent="." instance=ExtResource("5_osqx1")]
+position = Vector2(1090, 80)
+
+[node name="Float" type="Node" parent="." node_paths=PackedStringArray("star")]
+script = ExtResource("7_md4x4")
+star = NodePath("../Star")
+
+[node name="Float2" type="Node" parent="." node_paths=PackedStringArray("star")]
+script = ExtResource("7_md4x4")
+star = NodePath("../Matereos")
+float_height = 5.0
+float_duration = 5.0
+pulse_speed = 1.0
+pulse_amount = 0.0
+rotation_speed = 0.1
+metadata/_custom_type_script = "uid://8ws0ufstpot0"
+
+[connection signal="body_entered" from="Matereos" to="." method="_on_matereos_body_entered"]
+[connection signal="body_entered" from="Star" to="." method="_on_star_body_entered"]
