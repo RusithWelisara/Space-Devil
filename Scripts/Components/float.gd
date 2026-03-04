@@ -1,7 +1,7 @@
 extends Node
 class_name Float
 
-@export var star: Area2D
+@export var star: Node
 
 @export var float_height: float = 20.0
 @export var float_duration: float = 1.5   

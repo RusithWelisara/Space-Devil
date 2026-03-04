@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brciv2okw2vww"
-path="res://.godot/imported/meteorBrown_small2.png-ad2ab59751b43beacb229cd5dbe1d055.ctex"
+uid="uid://ddux2ng0mtt1x"
+path="res://.godot/imported/icon.svg-275acca93d4da0cf8e6e644b6bf5994f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/kenney_space-shooter-redux/PNG/Meteors/meteorBrown_small2.png"
-dest_files=["res://.godot/imported/meteorBrown_small2.png-ad2ab59751b43beacb229cd5dbe1d055.ctex"]
+source_file="res://addons/health_bar_x/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-275acca93d4da0cf8e6e644b6bf5994f.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
