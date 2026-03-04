@@ -4,6 +4,8 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 const BOUNDARY_MARGIN = 32  # Padding from edges to prevent sprite from going off-screen
 
+const ROTATION_SPEED = 5.0
+
 func _ready() -> void:
 	$AnimatedSprite2D.play("default")
 	var texture = preload("uid://cegjct2b5hhg5")
@@ -53,6 +55,10 @@ func _physics_process(delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 	
 	move_and_slide()
+	
+	# Rotate ship towards movement direction
+	if velocity != Vector2.ZERO:
+		rotation = rotate_toward(rotation, atan2(velocity.x, -velocity.y), ROTATION_SPEED * delta)
 	
 	# Clamp the spaceship position to stay within the viewport
 	var viewport_rect = get_viewport_rect()

@@ -14,7 +14,7 @@
 		"._preview.png": "res://Assets/space_background_pack/__MACOSX/space_background_pack/Assets/Old Version/._preview.png",
 		"._prop-planet-big.png": "res://Assets/space_background_pack/__MACOSX/space_background_pack/Assets/Blue Version/layered/._prop-planet-big.png",
 		"._prop-planet-small.png": "res://Assets/space_background_pack/__MACOSX/space_background_pack/Assets/Blue Version/layered/._prop-planet-small.png",
-		"README.md": "res://addons/gazeai/README.md",
+		"README.md": "res://README.md",
 		"asteroid-1.png": "res://Assets/space_background_pack/space_background_pack/Assets/Blue Version/layered/asteroid-1.png",
 		"asteroid-2.png": "res://Assets/space_background_pack/space_background_pack/Assets/Blue Version/layered/asteroid-2.png",
 		"beam0.png": "res://Assets/kenney_space-shooter-redux/PNG/Parts/beam0.png",
@@ -362,6 +362,14 @@
 		"DiffEngine": {
 
 		},
+		"Float": {
+			"float_duration": "float",
+			"float_height": "float",
+			"pulse_amount": "float",
+			"pulse_speed": "float",
+			"rotation_speed": "float",
+			"star": "Object"
+		},
 		"GDScriptParser": {
 
 		},
@@ -376,6 +384,11 @@
 		},
 		"GazeAISyntaxValidator": {
 
+		},
+		"GravityDrag": {
+			"drag_strength": "float",
+			"metereos": "Object",
+			"spaceship": "Object"
 		},
 		"PatchApplier": {
 
@@ -413,7 +426,19 @@
 		"gazeai": {
 
 		},
+		"level_1": {
+
+		},
+		"level_2": {
+
+		},
+		"level_3": {
+
+		},
 		"main_panel": {
+
+		},
+		"matereos": {
 
 		},
 		"patch_instructions_builder": {
@@ -455,12 +480,37 @@
 		},
 		"level_1": {
 			"path": "res://Scenes/Levels/level_1.tscn",
-			"scripts": []
+			"scripts": [
+				"level_1",
+				"GravityDrag",
+				"Float"
+			]
+		},
+		"level_2": {
+			"path": "res://Scenes/Levels/level_2.tscn",
+			"scripts": [
+				"level_1",
+				"GravityDrag",
+				"Float"
+			]
+		},
+		"level_3": {
+			"path": "res://Scenes/Levels/level_3.tscn",
+			"scripts": [
+				"level_1",
+				"Float"
+			]
 		},
 		"main_panel": {
 			"path": "res://addons/gazeai/ui/main_panel.tscn",
 			"scripts": [
 				"main_panel"
+			]
+		},
+		"matereos": {
+			"path": "res://Scenes/matereos.tscn",
+			"scripts": [
+				"matereos"
 			]
 		},
 		"smart_node_modal": {
@@ -472,6 +522,10 @@
 			"scripts": [
 				"space_ship"
 			]
+		},
+		"star": {
+			"path": "res://Scenes/star.tscn",
+			"scripts": []
 		},
 		"thinking_block": {
 			"path": "res://addons/gazeai/ui/thinking_block.tscn",
@@ -486,11 +540,13 @@
 		"ContextManager": "res://addons/gazeai/core/context/context_manager.gd",
 		"DependencyResolver": "res://addons/gazeai/core/context/dependency_resolver.gd",
 		"DiffEngine": "res://addons/gazeai/core/operations/diff_engine.gd",
+		"Float": "res://Scripts/Components/float.gd",
 		"GDScriptParser": "res://addons/gazeai/core/context/gdscript_parser.gd",
 		"GazeAIConstants": "res://addons/gazeai/core/config/constants.gd",
 		"GazeAIPatchApplicator": "res://addons/gazeai/core/patch_applicator.gd",
 		"GazeAIPatchHandler": "res://addons/gazeai/core/patch_handler.gd",
 		"GazeAISyntaxValidator": "res://addons/gazeai/core/syntax_validator.gd",
+		"GravityDrag": "res://Scripts/drag.gd",
 		"PatchApplier": "res://addons/gazeai/core/operations/patch_applier.gd",
 		"PatchGenerator": "res://addons/gazeai/core/agents/patch_generator.gd",
 		"PatchPlanner": "res://addons/gazeai/core/agents/patch_planner.gd",
@@ -503,7 +559,11 @@
 		"code_patch_viewer": "res://addons/gazeai/ui/code_patch_viewer.gd",
 		"embeddings_cache": "res://addons/gazeai/core/context/embeddings_cache.gd",
 		"gazeai": "res://addons/gazeai/gazeai.gd",
+		"level_1": "res://Scripts/Levels/level_1.gd",
+		"level_2": "res://Scripts/Levels/level_2.gd",
+		"level_3": "res://Scripts/Levels/level_3.gd",
 		"main_panel": "res://addons/gazeai/ui/main_panel.gd",
+		"matereos": "res://Scripts/matereos.gd",
 		"patch_instructions_builder": "res://addons/gazeai/core/agents/patch_instructions_builder.gd",
 		"retry_handler": "res://addons/gazeai/core/networking/retry_handler.gd",
 		"settings": "res://addons/gazeai/core/config/settings.gd",
@@ -519,11 +579,13 @@
 		"ContextManager": [],
 		"DependencyResolver": [],
 		"DiffEngine": [],
+		"Float": [],
 		"GDScriptParser": [],
 		"GazeAIConstants": [],
 		"GazeAIPatchApplicator": [],
 		"GazeAIPatchHandler": [],
 		"GazeAISyntaxValidator": [],
+		"GravityDrag": [],
 		"PatchApplier": [],
 		"PatchGenerator": [],
 		"PatchPlanner": [],
@@ -536,7 +598,11 @@
 		"code_patch_viewer": [],
 		"embeddings_cache": [],
 		"gazeai": [],
+		"level_1": [],
+		"level_2": [],
+		"level_3": [],
 		"main_panel": [],
+		"matereos": [],
 		"patch_instructions_builder": [],
 		"retry_handler": [],
 		"settings": [],
