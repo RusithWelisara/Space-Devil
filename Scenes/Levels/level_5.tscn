@@ -20,6 +20,12 @@ position = Vector2(91, 352)
 [node name="Matereos" parent="." unique_id=472241252 instance=ExtResource("4_0fyhm")]
 position = Vector2(453.79053, 321.40698)
 
+[node name="Matereos2" parent="." unique_id=356238736 instance=ExtResource("4_0fyhm")]
+position = Vector2(733.17676, 483.94388)
+
+[node name="Matereos3" parent="." unique_id=747836682 instance=ExtResource("4_0fyhm")]
+position = Vector2(689.17676, 28.543892)
+
 [node name="Star" parent="." unique_id=66893114 instance=ExtResource("5_evokg")]
 position = Vector2(994, 324)
 
@@ -44,9 +50,31 @@ pulse_amount = 0.0
 rotation_speed = 0.1
 metadata/_custom_type_script = "uid://8ws0ufstpot0"
 
+[node name="Float3" type="Node" parent="." unique_id=1780669744 node_paths=PackedStringArray("star")]
+script = ExtResource("7_20kd1")
+star = NodePath("../Matereos2")
+float_height = 5.0
+float_duration = 5.0
+pulse_speed = 1.0
+pulse_amount = 0.0
+rotation_speed = 0.1
+metadata/_custom_type_script = "uid://8ws0ufstpot0"
+
+[node name="Float4" type="Node" parent="." unique_id=1722883208 node_paths=PackedStringArray("star")]
+script = ExtResource("7_20kd1")
+star = NodePath("../Matereos3")
+float_height = 5.0
+float_duration = 5.0
+pulse_speed = 1.0
+pulse_amount = 0.0
+rotation_speed = 0.1
+metadata/_custom_type_script = "uid://8ws0ufstpot0"
+
 [node name="HealthBarX2D" type="Node2D" parent="." unique_id=1920022244]
 script = ExtResource("8_reooa")
 metadata/_custom_type_script = "uid://cyyvw35ypmhhu"
 
 [connection signal="body_entered" from="Matereos" to="." method="_on_matereos_body_entered"]
+[connection signal="body_entered" from="Matereos2" to="." method="_on_matereos_body_entered"]
+[connection signal="body_entered" from="Matereos3" to="." method="_on_matereos_body_entered"]
 [connection signal="body_entered" from="Star" to="." method="_on_star_body_entered"]

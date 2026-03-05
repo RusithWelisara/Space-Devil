@@ -18,13 +18,13 @@ script = ExtResource("1_fphuk")
 position = Vector2(91, 352)
 
 [node name="Matereos" parent="." unique_id=1046014309 instance=ExtResource("4_1jlnc")]
-position = Vector2(453.79053, 321.40698)
+position = Vector2(427, 297)
 
 [node name="Matereos2" parent="." unique_id=356669661 instance=ExtResource("4_1jlnc")]
 position = Vector2(327, 566)
 
 [node name="Matereos3" parent="." unique_id=1645496802 instance=ExtResource("4_1jlnc")]
-position = Vector2(139.84915, 238.48978)
+position = Vector2(116, 225)
 
 [node name="Star" parent="." unique_id=1346946265 instance=ExtResource("5_u40f0")]
 position = Vector2(610, 322)

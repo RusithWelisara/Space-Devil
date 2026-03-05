@@ -1,11 +1,13 @@
 extends Area2D
 
-var Metereos := [preload("uid://c4167imsdkooy"), preload("uid://ptw1pjiu8mxx"), preload("uid://bors2scr0bjwk"),preload("uid://4os72yssgig3"), preload("uid://bte7hp37taoj6"), preload("uid://3m81wds1e10c"), preload("uid://brujxqm1ej7dn"), preload("uid://bp0ho7tagvn0r"), preload("uid://qh4vaivswy2n"), preload("uid://c3efkycai5jkv"), preload("uid://di0qvigdwfird"), preload("uid://r57ir61qrprm"), preload("uid://c2bhl61nac3k6"), preload("uid://cdifo5krdivjq"), preload("uid://njqhr6ayglmu"), preload("uid://bjeu0iybu3aqv")]
+#var Metereos := [preload("uid://c4167imsdkooy"), preload("uid://ptw1pjiu8mxx"), preload("uid://bors2scr0bjwk"),preload("uid://4os72yssgig3"), preload("uid://bte7hp37taoj6"), preload("uid://3m81wds1e10c"), preload("uid://brujxqm1ej7dn"), preload("uid://qh4vaivswy2n"), preload("uid://c3efkycai5jkv"), preload("uid://di0qvigdwfird"), preload("uid://r57ir61qrprm"), preload("uid://c2bhl61nac3k6"), preload("uid://cdifo5krdivjq"), preload("uid://njqhr6ayglmu")]
+var Metereos := [preload("uid://byxhwrykm6yrs"), preload("uid://bh2ungieg6pts")]
 
 func _ready() -> void:
 	if Metereos.size() > 0:
 		var texture = Metereos.pick_random()
 		$Sprite2D.texture = texture
+		$Sprite2D.scale = Vector2(5,5)
 		
 		setup_collision(texture)
 

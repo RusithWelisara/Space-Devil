@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bg2njuc7hf3w7"]
+[gd_scene format=3 uid="uid://bg2njuc7hf3w7"]
 
 [ext_resource type="Script" uid="uid://duyb8i3qb4i54" path="res://Scripts/matereos.gd" id="1_drv2y"]
+[ext_resource type="Texture2D" uid="uid://bh2ungieg6pts" path="res://Assets/space_background_pack/space_background_pack/Assets/Blue Version/layered/asteroid-2.png" id="2_ijwvg"]
 
-[node name="Matereos" type="Area2D"]
+[node name="Matereos" type="Area2D" unique_id=356238736]
 script = ExtResource("1_drv2y")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1663074881]
+texture = ExtResource("2_ijwvg")

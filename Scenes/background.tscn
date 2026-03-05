@@ -1,10 +1,66 @@
-[gd_scene load_steps=2 format=3 uid="uid://cciox88dt8rdj"]
+[gd_scene format=3 uid="uid://cciox88dt8rdj"]
 
 [ext_resource type="Texture2D" uid="uid://ypa0dl1bpq47" path="res://Assets/space_background_pack/space_background_pack/Assets/Blue Version/blue-preview.png" id="1_sn1xx"]
+[ext_resource type="Texture2D" uid="uid://boriviu7ohdub" path="res://Assets/space_background_pack/space_background_pack/Assets/Blue Version/layered/blue-stars.png" id="2_42s4r"]
+[ext_resource type="Texture2D" uid="uid://bh2761s7csem7" path="res://Assets/space_background_pack/space_background_pack/Assets/Blue Version/layered/blue-back.png" id="2_pojwb"]
+[ext_resource type="Texture2D" uid="uid://stf6vnld5dan" path="res://Assets/space_background_pack/space_background_pack/Assets/Blue Version/layered/prop-planet-small.png" id="4_kopta"]
+[ext_resource type="Texture2D" uid="uid://bltt1ow7vom8q" path="res://Assets/space_background_pack/space_background_pack/Assets/Blue Version/layered/prop-planet-big.png" id="5_wi0l6"]
+[ext_resource type="Texture2D" uid="uid://bh2ungieg6pts" path="res://Assets/space_background_pack/space_background_pack/Assets/Blue Version/layered/asteroid-2.png" id="6_b4xn0"]
+[ext_resource type="Texture2D" uid="uid://byxhwrykm6yrs" path="res://Assets/space_background_pack/space_background_pack/Assets/Blue Version/layered/asteroid-1.png" id="7_bdh0s"]
 
-[node name="Background" type="Node2D"]
+[node name="Background" type="Node2D" unique_id=199210699]
 
-[node name="BluePreview" type="Sprite2D" parent="."]
+[node name="BG" type="Sprite2D" parent="." unique_id=339416390]
+position = Vector2(577.5584, 325.00006)
+scale = Vector2(4.261459, 4.0687504)
+texture = ExtResource("2_pojwb")
+
+[node name="Stars" type="Sprite2D" parent="." unique_id=1351380543]
+position = Vector2(570, 325.00006)
+scale = Vector2(4.317035, 4.0687504)
+texture = ExtResource("2_42s4r")
+
+[node name="BluePreview" type="Sprite2D" parent="." unique_id=1881852269]
+visible = false
 position = Vector2(577, 321)
 scale = Vector2(1.4191177, 1.3375)
 texture = ExtResource("1_sn1xx")
+
+[node name="PropPlanetSmall" type="Sprite2D" parent="." unique_id=35026877]
+position = Vector2(615, 518)
+scale = Vector2(4.625, 4.625)
+texture = ExtResource("4_kopta")
+
+[node name="PropPlanetBig" type="Sprite2D" parent="." unique_id=1254329157]
+position = Vector2(316.375, 345.375)
+scale = Vector2(4.1220922, 4.1220922)
+texture = ExtResource("5_wi0l6")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=777341460]
+visible = false
+modulate = Color(0.735357, 0.735357, 0.735357, 1)
+
+[node name="Asteroid2" type="Sprite2D" parent="Node2D" unique_id=638010972]
+position = Vector2(773.00006, 104.00001)
+scale = Vector2(5.4852924, 5.485293)
+texture = ExtResource("6_b4xn0")
+
+[node name="Asteroid3" type="Sprite2D" parent="Node2D" unique_id=1060121194]
+position = Vector2(943, 452.00003)
+scale = Vector2(3.9779413, 3.9779415)
+texture = ExtResource("6_b4xn0")
+
+[node name="Asteroid1" type="Sprite2D" parent="Node2D" unique_id=1708005605]
+position = Vector2(357, 98)
+scale = Vector2(4.222222, 4.222222)
+texture = ExtResource("7_bdh0s")
+
+[node name="Asteroid4" type="Sprite2D" parent="Node2D" unique_id=1501219904]
+position = Vector2(842, 325)
+scale = Vector2(4.222222, 4.222222)
+texture = ExtResource("7_bdh0s")
+
+[node name="Asteroid5" type="Sprite2D" parent="Node2D" unique_id=1075676356]
+position = Vector2(459, 224)
+scale = Vector2(3.9117646, 3.9117646)
+texture = ExtResource("6_b4xn0")

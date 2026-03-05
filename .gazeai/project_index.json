@@ -14,7 +14,7 @@
 		"._preview.png": "res://Assets/space_background_pack/__MACOSX/space_background_pack/Assets/Old Version/._preview.png",
 		"._prop-planet-big.png": "res://Assets/space_background_pack/__MACOSX/space_background_pack/Assets/Blue Version/layered/._prop-planet-big.png",
 		"._prop-planet-small.png": "res://Assets/space_background_pack/__MACOSX/space_background_pack/Assets/Blue Version/layered/._prop-planet-small.png",
-		"README.md": "res://addons/gazeai/README.md",
+		"README.md": "res://README.md",
 		"asteroid-1.png": "res://Assets/space_background_pack/space_background_pack/Assets/Blue Version/layered/asteroid-1.png",
 		"asteroid-2.png": "res://Assets/space_background_pack/space_background_pack/Assets/Blue Version/layered/asteroid-2.png",
 		"beam0.png": "res://Assets/kenney_space-shooter-redux/PNG/Parts/beam0.png",
@@ -73,6 +73,7 @@
 		"cockpitYellow_7.png": "res://Assets/kenney_space-shooter-redux/PNG/Parts/cockpitYellow_7.png",
 		"cursor.png": "res://Assets/kenney_space-shooter-redux/PNG/UI/cursor.png",
 		"darkPurple.png": "res://Assets/kenney_space-shooter-redux/Backgrounds/darkPurple.png",
+		"dmoke.png": "res://Assets/Black Hole/dmoke.png",
 		"enemyBlack1.png": "res://Assets/kenney_space-shooter-redux/PNG/Enemies/enemyBlack1.png",
 		"enemyBlack2.png": "res://Assets/kenney_space-shooter-redux/PNG/Enemies/enemyBlack2.png",
 		"enemyBlack3.png": "res://Assets/kenney_space-shooter-redux/PNG/Enemies/enemyBlack3.png",
@@ -130,6 +131,7 @@
 		"gun08.png": "res://Assets/kenney_space-shooter-redux/PNG/Parts/gun08.png",
 		"gun09.png": "res://Assets/kenney_space-shooter-redux/PNG/Parts/gun09.png",
 		"gun10.png": "res://Assets/kenney_space-shooter-redux/PNG/Parts/gun10.png",
+		"hole.png": "res://Assets/Black Hole/hole.png",
 		"icon.svg": "res://icon.svg",
 		"laserBlue01.png": "res://Assets/kenney_space-shooter-redux/PNG/Lasers/laserBlue01.png",
 		"laserBlue02.png": "res://Assets/kenney_space-shooter-redux/PNG/Lasers/laserBlue02.png",
@@ -254,7 +256,7 @@
 		"playerShip3_green.png": "res://Assets/kenney_space-shooter-redux/PNG/playerShip3_green.png",
 		"playerShip3_orange.png": "res://Assets/kenney_space-shooter-redux/PNG/playerShip3_orange.png",
 		"playerShip3_red.png": "res://Assets/kenney_space-shooter-redux/PNG/playerShip3_red.png",
-		"plugin.cfg": "res://addons/gazeai/plugin.cfg",
+		"plugin.cfg": "res://addons/health_bar_x/plugin.cfg",
 		"powerupBlue.png": "res://Assets/kenney_space-shooter-redux/PNG/Power-ups/powerupBlue.png",
 		"powerupBlue_bolt.png": "res://Assets/kenney_space-shooter-redux/PNG/Power-ups/powerupBlue_bolt.png",
 		"powerupBlue_shield.png": "res://Assets/kenney_space-shooter-redux/PNG/Power-ups/powerupBlue_shield.png",
@@ -275,6 +277,7 @@
 		"prop-planet-big.png": "res://Assets/space_background_pack/space_background_pack/Assets/Blue Version/layered/prop-planet-big.png",
 		"prop-planet-small.png": "res://Assets/space_background_pack/space_background_pack/Assets/Blue Version/layered/prop-planet-small.png",
 		"purple.png": "res://Assets/kenney_space-shooter-redux/Backgrounds/purple.png",
+		"ring.png": "res://Assets/Black Hole/ring.png",
 		"sample.png": "res://Assets/kenney_space-shooter-redux/sample.png",
 		"scratch1.png": "res://Assets/kenney_space-shooter-redux/PNG/Parts/scratch1.png",
 		"scratch2.png": "res://Assets/kenney_space-shooter-redux/PNG/Parts/scratch2.png",
@@ -362,6 +365,14 @@
 		"DiffEngine": {
 
 		},
+		"Float": {
+			"float_duration": "float",
+			"float_height": "float",
+			"pulse_amount": "float",
+			"pulse_speed": "float",
+			"rotation_speed": "float",
+			"star": "Object"
+		},
 		"GDScriptParser": {
 
 		},
@@ -376,6 +387,92 @@
 		},
 		"GazeAISyntaxValidator": {
 
+		},
+		"GravityDrag": {
+			"drag_strength": "float",
+			"enabled": "bool",
+			"metereos": "Object",
+			"spaceship": "Object"
+		},
+		"HealthBarX2D": {
+			"bar_size": "Vector2",
+			"billboard_scale": "bool",
+			"center_on_target": "bool",
+			"follow_offset": "Vector2",
+			"follow_target": "Object",
+			"max_value": "float",
+			"min_value": "float",
+			"style": "Object",
+			"value": "float"
+		},
+		"HealthBarXControl": {
+			"max_value": "float",
+			"min_value": "float",
+			"style": "Object",
+			"value": "float"
+		},
+		"HealthBarXDraw": {
+
+		},
+		"HealthBarXEnums": {
+
+		},
+		"HealthBarXStyle": {
+			"animation_duration": "float",
+			"animation_duration_decrease": "float",
+			"animation_easing": "int",
+			"animation_easing_decrease": "int",
+			"animation_enabled": "bool",
+			"animation_mode": "int",
+			"animation_snap_threshold": "float",
+			"animation_transition": "int",
+			"animation_transition_decrease": "int",
+			"background_color": "Color",
+			"border_color": "Color",
+			"border_enabled": "bool",
+			"border_join_round": "bool",
+			"border_thickness": "int",
+			"color_green": "Color",
+			"color_orange": "Color",
+			"color_red": "Color",
+			"fill_color": "Color",
+			"fill_inset": "Vector2",
+			"font": "Object",
+			"font_color": "Color",
+			"font_size": "int",
+			"gradient_apply_to": "int",
+			"gradient_direction": "int",
+			"gradient_enabled": "bool",
+			"gradient_end_color": "Color",
+			"gradient_intensity": "float",
+			"gradient_start_color": "Color",
+			"icon_enabled": "bool",
+			"icon_fit_mode": "int",
+			"icon_forced_size": "Vector2",
+			"icon_offset": "Vector2",
+			"icon_position": "int",
+			"icon_scene": "Object",
+			"icon_texture": "Object",
+			"icon_tint": "Color",
+			"label_custom_max": "float",
+			"label_enabled": "bool",
+			"label_format": "String",
+			"label_offset": "Vector2",
+			"label_position": "int",
+			"label_shadow_color": "Color",
+			"label_shadow_enabled": "bool",
+			"label_shadow_offset": "Vector2",
+			"outline_color": "Color",
+			"outline_size": "int",
+			"roundness": "float",
+			"shadow_apply_to": "int",
+			"shadow_blur_passes": "int",
+			"shadow_color": "Color",
+			"shadow_enabled": "bool",
+			"shadow_offset": "Vector2",
+			"threshold_orange_max": "float",
+			"threshold_red_max": "float",
+			"use_threshold_colors": "bool"
 		},
 		"PatchApplier": {
 
@@ -413,10 +510,31 @@
 		"gazeai": {
 
 		},
+		"level_1": {
+			"damage_per_sec": "float"
+		},
+		"level_2": {
+			"damage_per_sec": "float"
+		},
+		"level_3": {
+			"damage_per_sec": "float"
+		},
+		"level_4": {
+			"damage_per_sec": "float"
+		},
+		"level_5": {
+			"damage_per_sec": "float"
+		},
 		"main_panel": {
 
 		},
+		"matereos": {
+
+		},
 		"patch_instructions_builder": {
+
+		},
+		"plugin": {
 
 		},
 		"retry_handler": {
@@ -432,7 +550,7 @@
 
 		},
 		"space_ship": {
-
+			"rotation_speed": "float"
 		},
 		"static_analyzer": {
 
@@ -447,6 +565,12 @@
 			"path": "res://Scenes/background.tscn",
 			"scripts": []
 		},
+		"black_hole": {
+			"path": "res://Scenes/black_hole.tscn",
+			"scripts": [
+				"Float"
+			]
+		},
 		"code_patch_viewer": {
 			"path": "res://addons/gazeai/ui/code_patch_viewer.tscn",
 			"scripts": [
@@ -455,12 +579,58 @@
 		},
 		"level_1": {
 			"path": "res://Scenes/Levels/level_1.tscn",
-			"scripts": []
+			"scripts": [
+				"level_1",
+				"GravityDrag",
+				"Float",
+				"HealthBarX2D"
+			]
+		},
+		"level_2": {
+			"path": "res://Scenes/Levels/level_2.tscn",
+			"scripts": [
+				"level_2",
+				"GravityDrag",
+				"Float",
+				"HealthBarX2D"
+			]
+		},
+		"level_3": {
+			"path": "res://Scenes/Levels/level_3.tscn",
+			"scripts": [
+				"level_3",
+				"HealthBarX2D",
+				"Float"
+			]
+		},
+		"level_4": {
+			"path": "res://Scenes/Levels/level_4.tscn",
+			"scripts": [
+				"level_4",
+				"GravityDrag",
+				"Float",
+				"HealthBarX2D"
+			]
+		},
+		"level_5": {
+			"path": "res://Scenes/Levels/level_5.tscn",
+			"scripts": [
+				"level_5",
+				"GravityDrag",
+				"Float",
+				"HealthBarX2D"
+			]
 		},
 		"main_panel": {
 			"path": "res://addons/gazeai/ui/main_panel.tscn",
 			"scripts": [
 				"main_panel"
+			]
+		},
+		"matereos": {
+			"path": "res://Scenes/matereos.tscn",
+			"scripts": [
+				"matereos"
 			]
 		},
 		"smart_node_modal": {
@@ -472,6 +642,10 @@
 			"scripts": [
 				"space_ship"
 			]
+		},
+		"star": {
+			"path": "res://Scenes/star.tscn",
+			"scripts": []
 		},
 		"thinking_block": {
 			"path": "res://addons/gazeai/ui/thinking_block.tscn",
@@ -486,11 +660,18 @@
 		"ContextManager": "res://addons/gazeai/core/context/context_manager.gd",
 		"DependencyResolver": "res://addons/gazeai/core/context/dependency_resolver.gd",
 		"DiffEngine": "res://addons/gazeai/core/operations/diff_engine.gd",
+		"Float": "res://Scripts/Components/float.gd",
 		"GDScriptParser": "res://addons/gazeai/core/context/gdscript_parser.gd",
 		"GazeAIConstants": "res://addons/gazeai/core/config/constants.gd",
 		"GazeAIPatchApplicator": "res://addons/gazeai/core/patch_applicator.gd",
 		"GazeAIPatchHandler": "res://addons/gazeai/core/patch_handler.gd",
 		"GazeAISyntaxValidator": "res://addons/gazeai/core/syntax_validator.gd",
+		"GravityDrag": "res://Scripts/drag.gd",
+		"HealthBarX2D": "res://addons/health_bar_x/runtime/health_bar_x_2d.gd",
+		"HealthBarXControl": "res://addons/health_bar_x/runtime/health_bar_x_control.gd",
+		"HealthBarXDraw": "res://addons/health_bar_x/runtime/health_bar_x_draw.gd",
+		"HealthBarXEnums": "res://addons/health_bar_x/runtime/health_bar_x_enums.gd",
+		"HealthBarXStyle": "res://addons/health_bar_x/runtime/health_bar_x_style.gd",
 		"PatchApplier": "res://addons/gazeai/core/operations/patch_applier.gd",
 		"PatchGenerator": "res://addons/gazeai/core/agents/patch_generator.gd",
 		"PatchPlanner": "res://addons/gazeai/core/agents/patch_planner.gd",
@@ -503,8 +684,15 @@
 		"code_patch_viewer": "res://addons/gazeai/ui/code_patch_viewer.gd",
 		"embeddings_cache": "res://addons/gazeai/core/context/embeddings_cache.gd",
 		"gazeai": "res://addons/gazeai/gazeai.gd",
+		"level_1": "res://Scripts/Levels/level_1.gd",
+		"level_2": "res://Scripts/Levels/level_2.gd",
+		"level_3": "res://Scripts/Levels/level_3.gd",
+		"level_4": "res://Scripts/Levels/level_4.gd",
+		"level_5": "res://Scripts/Levels/level_5.gd",
 		"main_panel": "res://addons/gazeai/ui/main_panel.gd",
+		"matereos": "res://Scripts/matereos.gd",
 		"patch_instructions_builder": "res://addons/gazeai/core/agents/patch_instructions_builder.gd",
+		"plugin": "res://addons/health_bar_x/plugin.gd",
 		"retry_handler": "res://addons/gazeai/core/networking/retry_handler.gd",
 		"settings": "res://addons/gazeai/core/config/settings.gd",
 		"smart_node_generator": "res://addons/gazeai/core/operations/smart_node_generator.gd",
@@ -519,11 +707,26 @@
 		"ContextManager": [],
 		"DependencyResolver": [],
 		"DiffEngine": [],
+		"Float": [],
 		"GDScriptParser": [],
 		"GazeAIConstants": [],
 		"GazeAIPatchApplicator": [],
 		"GazeAIPatchHandler": [],
 		"GazeAISyntaxValidator": [],
+		"GravityDrag": [],
+		"HealthBarX2D": [
+			"value_change_started",
+			"value_changed",
+			"value_change_finished"
+		],
+		"HealthBarXControl": [
+			"value_change_started",
+			"value_changed",
+			"value_change_finished"
+		],
+		"HealthBarXDraw": [],
+		"HealthBarXEnums": [],
+		"HealthBarXStyle": [],
 		"PatchApplier": [],
 		"PatchGenerator": [],
 		"PatchPlanner": [],
@@ -536,8 +739,15 @@
 		"code_patch_viewer": [],
 		"embeddings_cache": [],
 		"gazeai": [],
+		"level_1": [],
+		"level_2": [],
+		"level_3": [],
+		"level_4": [],
+		"level_5": [],
 		"main_panel": [],
+		"matereos": [],
 		"patch_instructions_builder": [],
+		"plugin": [],
 		"retry_handler": [],
 		"settings": [],
 		"smart_node_generator": [],

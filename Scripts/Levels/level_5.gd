@@ -17,12 +17,12 @@ func _process(delta: float) -> void:
 
 func _on_star_body_entered(body) -> void:
 	if body == space_ship:
-		get_tree().change_scene_to_file("res://Scenes/Levels/level_1.tscn")
+		get_tree().call_deferred("change_scene_to_file", "res://Scenes/Levels/level_1.tscn")
 
 func _on_matereos_body_entered(body) -> void:
 	if body == space_ship:
 		space_ship.destroy()
-		get_tree().reload_current_scene()
+		get_tree().call_deferred("reload_current_scene")
 
 func low_fuel():
 	if health_bar_x_2d.value == 0:

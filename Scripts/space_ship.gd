@@ -5,6 +5,7 @@ const JUMP_VELOCITY = -400.0
 const BOUNDARY_MARGIN = 32  # Padding from edges to prevent sprite from going off-screen
 var can_move: bool = true
 var direction:int = 1
+@export var rotation_speed: float = 5.0
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("default")
@@ -46,8 +47,15 @@ func _physics_process(delta: float) -> void:
 			velocity.y = move_toward(velocity.y, 0, SPEED)
 		
 		move_and_slide()
-	
-	# Clamp the spaceship position to stay within the viewport
+		
+		# Rotate spaceship towards movement direction
+		if velocity.length() > 0.1:  # Only rotate when there's significant movement
+			var target_rotation = atan2(velocity.x, -velocity.y)
+			rotation = lerp(rotation, target_rotation, rotation_speed * delta)
+		
+
+		move_and_slide()
+	# Clamp the spaceship position to stay within the viewport	
 	var viewport_rect = get_viewport_rect()
 	position.x = clamp(position.x, BOUNDARY_MARGIN, viewport_rect.size.x - BOUNDARY_MARGIN)
 	position.y = clamp(position.y, BOUNDARY_MARGIN, viewport_rect.size.y - BOUNDARY_MARGIN)

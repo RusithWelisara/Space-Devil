@@ -11,7 +11,7 @@ extends Node2D
 
 @export var damage_per_sec:float = 0.2
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	health_bar_x_2d.value -= damage_per_sec
 	low_fuel()
 
@@ -37,13 +37,13 @@ func _on_star_body_entered(body) -> void:
 
 func _on_matereos_body_entered(body) -> void:
 	if body == space_ship:
-		get_tree().change_scene_to_file("res://Scenes/Levels/level_5.tscn")
+		get_tree().call_deferred("change_scene_to_file", "res://Scenes/Levels/level_5.tscn")
 
 
 func _on_black_hole_body_entered(body) -> void:
 	if body == space_ship:
 		space_ship.destroy()
-		get_tree().reload_current_scene()
+		get_tree().call_deferred("reload_current_scene")
 
 func low_fuel():
 	if health_bar_x_2d.value == 0:
