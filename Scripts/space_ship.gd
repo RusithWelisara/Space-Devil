@@ -7,6 +7,8 @@ var can_move: bool = true
 var direction:int = 1
 @export var rotation_speed: float = 5.0
 
+const ROTATION_SPEED = 5.0
+
 func _ready() -> void:
 	$AnimatedSprite2D.play("default")
 	var texture = preload("uid://cegjct2b5hhg5")
@@ -47,15 +49,12 @@ func _physics_process(delta: float) -> void:
 			velocity.y = move_toward(velocity.y, 0, SPEED)
 		
 		move_and_slide()
-		
-		# Rotate spaceship towards movement direction
-		if velocity.length() > 0.1:  # Only rotate when there's significant movement
-			var target_rotation = atan2(velocity.x, -velocity.y)
-			rotation = lerp(rotation, target_rotation, rotation_speed * delta)
-		
-
-		move_and_slide()
-	# Clamp the spaceship position to stay within the viewport	
+	
+	# Rotate ship towards movement direction
+	if velocity != Vector2.ZERO:
+		rotation = rotate_toward(rotation, atan2(velocity.x, -velocity.y), ROTATION_SPEED * delta)
+	
+	# Clamp the spaceship position to stay within the viewport
 	var viewport_rect = get_viewport_rect()
 	position.x = clamp(position.x, BOUNDARY_MARGIN, viewport_rect.size.x - BOUNDARY_MARGIN)
 	position.y = clamp(position.y, BOUNDARY_MARGIN, viewport_rect.size.y - BOUNDARY_MARGIN)
