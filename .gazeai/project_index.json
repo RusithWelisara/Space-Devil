@@ -390,89 +390,8 @@
 		},
 		"GravityDrag": {
 			"drag_strength": "float",
-			"enabled": "bool",
 			"metereos": "Object",
 			"spaceship": "Object"
-		},
-		"HealthBarX2D": {
-			"bar_size": "Vector2",
-			"billboard_scale": "bool",
-			"center_on_target": "bool",
-			"follow_offset": "Vector2",
-			"follow_target": "Object",
-			"max_value": "float",
-			"min_value": "float",
-			"style": "Object",
-			"value": "float"
-		},
-		"HealthBarXControl": {
-			"max_value": "float",
-			"min_value": "float",
-			"style": "Object",
-			"value": "float"
-		},
-		"HealthBarXDraw": {
-
-		},
-		"HealthBarXEnums": {
-
-		},
-		"HealthBarXStyle": {
-			"animation_duration": "float",
-			"animation_duration_decrease": "float",
-			"animation_easing": "int",
-			"animation_easing_decrease": "int",
-			"animation_enabled": "bool",
-			"animation_mode": "int",
-			"animation_snap_threshold": "float",
-			"animation_transition": "int",
-			"animation_transition_decrease": "int",
-			"background_color": "Color",
-			"border_color": "Color",
-			"border_enabled": "bool",
-			"border_join_round": "bool",
-			"border_thickness": "int",
-			"color_green": "Color",
-			"color_orange": "Color",
-			"color_red": "Color",
-			"fill_color": "Color",
-			"fill_inset": "Vector2",
-			"font": "Object",
-			"font_color": "Color",
-			"font_size": "int",
-			"gradient_apply_to": "int",
-			"gradient_direction": "int",
-			"gradient_enabled": "bool",
-			"gradient_end_color": "Color",
-			"gradient_intensity": "float",
-			"gradient_start_color": "Color",
-			"icon_enabled": "bool",
-			"icon_fit_mode": "int",
-			"icon_forced_size": "Vector2",
-			"icon_offset": "Vector2",
-			"icon_position": "int",
-			"icon_scene": "Object",
-			"icon_texture": "Object",
-			"icon_tint": "Color",
-			"label_custom_max": "float",
-			"label_enabled": "bool",
-			"label_format": "String",
-			"label_offset": "Vector2",
-			"label_position": "int",
-			"label_shadow_color": "Color",
-			"label_shadow_enabled": "bool",
-			"label_shadow_offset": "Vector2",
-			"outline_color": "Color",
-			"outline_size": "int",
-			"roundness": "float",
-			"shadow_apply_to": "int",
-			"shadow_blur_passes": "int",
-			"shadow_color": "Color",
-			"shadow_enabled": "bool",
-			"shadow_offset": "Vector2",
-			"threshold_orange_max": "float",
-			"threshold_red_max": "float",
-			"use_threshold_colors": "bool"
 		},
 		"PatchApplier": {
 
@@ -511,19 +430,13 @@
 
 		},
 		"level_1": {
-			"damage_per_sec": "float"
+
 		},
 		"level_2": {
-			"damage_per_sec": "float"
+
 		},
 		"level_3": {
-			"damage_per_sec": "float"
-		},
-		"level_4": {
-			"damage_per_sec": "float"
-		},
-		"level_5": {
-			"damage_per_sec": "float"
+
 		},
 		"main_panel": {
 
@@ -582,43 +495,22 @@
 			"scripts": [
 				"level_1",
 				"GravityDrag",
-				"Float",
-				"HealthBarX2D"
+				"Float"
 			]
 		},
 		"level_2": {
 			"path": "res://Scenes/Levels/level_2.tscn",
 			"scripts": [
-				"level_2",
+				"level_1",
 				"GravityDrag",
-				"Float",
-				"HealthBarX2D"
+				"Float"
 			]
 		},
 		"level_3": {
 			"path": "res://Scenes/Levels/level_3.tscn",
 			"scripts": [
-				"level_3",
-				"HealthBarX2D",
+				"level_1",
 				"Float"
-			]
-		},
-		"level_4": {
-			"path": "res://Scenes/Levels/level_4.tscn",
-			"scripts": [
-				"level_4",
-				"GravityDrag",
-				"Float",
-				"HealthBarX2D"
-			]
-		},
-		"level_5": {
-			"path": "res://Scenes/Levels/level_5.tscn",
-			"scripts": [
-				"level_5",
-				"GravityDrag",
-				"Float",
-				"HealthBarX2D"
 			]
 		},
 		"main_panel": {
@@ -667,11 +559,6 @@
 		"GazeAIPatchHandler": "res://addons/gazeai/core/patch_handler.gd",
 		"GazeAISyntaxValidator": "res://addons/gazeai/core/syntax_validator.gd",
 		"GravityDrag": "res://Scripts/drag.gd",
-		"HealthBarX2D": "res://addons/health_bar_x/runtime/health_bar_x_2d.gd",
-		"HealthBarXControl": "res://addons/health_bar_x/runtime/health_bar_x_control.gd",
-		"HealthBarXDraw": "res://addons/health_bar_x/runtime/health_bar_x_draw.gd",
-		"HealthBarXEnums": "res://addons/health_bar_x/runtime/health_bar_x_enums.gd",
-		"HealthBarXStyle": "res://addons/health_bar_x/runtime/health_bar_x_style.gd",
 		"PatchApplier": "res://addons/gazeai/core/operations/patch_applier.gd",
 		"PatchGenerator": "res://addons/gazeai/core/agents/patch_generator.gd",
 		"PatchPlanner": "res://addons/gazeai/core/agents/patch_planner.gd",
@@ -742,8 +629,6 @@
 		"level_1": [],
 		"level_2": [],
 		"level_3": [],
-		"level_4": [],
-		"level_5": [],
 		"main_panel": [],
 		"matereos": [],
 		"patch_instructions_builder": [],
