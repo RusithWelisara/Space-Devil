@@ -12,6 +12,7 @@
 
 [node name="Level 4" type="Node2D" unique_id=793902484]
 script = ExtResource("1_h0uxt")
+damage_per_sec = 0.3
 
 [node name="Background" parent="." unique_id=1763993793 instance=ExtResource("2_h0uxt")]
 

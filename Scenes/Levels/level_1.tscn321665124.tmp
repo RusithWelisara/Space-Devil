@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://b72ito6mrmku3"]
+
+[ext_resource type="Script" uid="uid://p1gca44ml0ju" path="res://Scripts/Levels/level_1.gd" id="1_cyadu"]
+[ext_resource type="PackedScene" uid="uid://cciox88dt8rdj" path="res://Scenes/background.tscn" id="1_tlcug"]
+[ext_resource type="PackedScene" uid="uid://crrlk5rh4w4y3" path="res://Scenes/space_ship.tscn" id="2_4dpyx"]
+[ext_resource type="PackedScene" uid="uid://bg2njuc7hf3w7" path="res://Scenes/matereos.tscn" id="3_3mqfk"]
+[ext_resource type="PackedScene" uid="uid://c0atdy76ahqp" path="res://Scenes/star.tscn" id="4_iixi8"]
+[ext_resource type="Script" uid="uid://b0kof4ns5cwnu" path="res://Scripts/drag.gd" id="6_xgxfi"]
+[ext_resource type="Script" uid="uid://8ws0ufstpot0" path="res://Scripts/Components/float.gd" id="7_5f3p6"]
+[ext_resource type="Script" uid="uid://cyyvw35ypmhhu" path="res://addons/health_bar_x/runtime/health_bar_x_2d.gd" id="9_rb0md"]
+
+[node name="Level 1" type="Node2D" unique_id=1036430355]
+script = ExtResource("1_cyadu")
+
+[node name="Background" parent="." unique_id=1761227370 instance=ExtResource("1_tlcug")]
+
+[node name="SpaceShip" parent="." unique_id=853589691 instance=ExtResource("2_4dpyx")]
+position = Vector2(91, 352)
+
+[node name="Matereos" parent="." unique_id=1615197515 instance=ExtResource("3_3mqfk")]
+position = Vector2(453.79053, 321.40698)
+
+[node name="Star" parent="." unique_id=285183669 instance=ExtResource("4_iixi8")]
+position = Vector2(994, 324)
+
+[node name="GravityDrag" type="Node" parent="." unique_id=835115516 node_paths=PackedStringArray("spaceship", "metereos")]
+script = ExtResource("6_xgxfi")
+spaceship = NodePath("../SpaceShip")
+metereos = NodePath("../Matereos")
+drag_strength = 100.0
+metadata/_custom_type_script = "uid://b0kof4ns5cwnu"
+
+[node name="Float" type="Node" parent="." unique_id=1405000665 node_paths=PackedStringArray("star")]
+script = ExtResource("7_5f3p6")
+star = NodePath("../Star")
+
+[node name="Float2" type="Node" parent="." unique_id=1469538268 node_paths=PackedStringArray("star")]
+script = ExtResource("7_5f3p6")
+star = NodePath("../Matereos")
+float_height = 5.0
+float_duration = 5.0
+pulse_speed = 1.0
+pulse_amount = 0.0
+rotation_speed = 0.1
+metadata/_custom_type_script = "uid://8ws0ufstpot0"
+
+[node name="HealthBarX2D" type="Node2D" parent="." unique_id=163654520]
+script = ExtResource("9_rb0md")
+value = 50.0
+metadata/_custom_type_script = "uid://cyyvw35ypmhhu"
+
+[connection signal="body_entered" from="Matereos" to="." method="_on_matereos_body_entered"]
+[connection signal="body_entered" from="Star" to="." method="_on_star_body_entered"]

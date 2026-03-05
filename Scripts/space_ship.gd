@@ -5,6 +5,7 @@ const JUMP_VELOCITY = -400.0
 const BOUNDARY_MARGIN = 32  # Padding from edges to prevent sprite from going off-screen
 var can_move: bool = true
 var direction:int = 1
+@export var rotation_speed: float = 5.0
 
 const ROTATION_SPEED = 5.0
 

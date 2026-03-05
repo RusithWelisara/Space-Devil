@@ -73,6 +73,7 @@
 		"cockpitYellow_7.png": "res://Assets/kenney_space-shooter-redux/PNG/Parts/cockpitYellow_7.png",
 		"cursor.png": "res://Assets/kenney_space-shooter-redux/PNG/UI/cursor.png",
 		"darkPurple.png": "res://Assets/kenney_space-shooter-redux/Backgrounds/darkPurple.png",
+		"dmoke.png": "res://Assets/Black Hole/dmoke.png",
 		"enemyBlack1.png": "res://Assets/kenney_space-shooter-redux/PNG/Enemies/enemyBlack1.png",
 		"enemyBlack2.png": "res://Assets/kenney_space-shooter-redux/PNG/Enemies/enemyBlack2.png",
 		"enemyBlack3.png": "res://Assets/kenney_space-shooter-redux/PNG/Enemies/enemyBlack3.png",
@@ -130,6 +131,7 @@
 		"gun08.png": "res://Assets/kenney_space-shooter-redux/PNG/Parts/gun08.png",
 		"gun09.png": "res://Assets/kenney_space-shooter-redux/PNG/Parts/gun09.png",
 		"gun10.png": "res://Assets/kenney_space-shooter-redux/PNG/Parts/gun10.png",
+		"hole.png": "res://Assets/Black Hole/hole.png",
 		"icon.svg": "res://icon.svg",
 		"laserBlue01.png": "res://Assets/kenney_space-shooter-redux/PNG/Lasers/laserBlue01.png",
 		"laserBlue02.png": "res://Assets/kenney_space-shooter-redux/PNG/Lasers/laserBlue02.png",
@@ -254,7 +256,7 @@
 		"playerShip3_green.png": "res://Assets/kenney_space-shooter-redux/PNG/playerShip3_green.png",
 		"playerShip3_orange.png": "res://Assets/kenney_space-shooter-redux/PNG/playerShip3_orange.png",
 		"playerShip3_red.png": "res://Assets/kenney_space-shooter-redux/PNG/playerShip3_red.png",
-		"plugin.cfg": "res://addons/gazeai/plugin.cfg",
+		"plugin.cfg": "res://addons/health_bar_x/plugin.cfg",
 		"powerupBlue.png": "res://Assets/kenney_space-shooter-redux/PNG/Power-ups/powerupBlue.png",
 		"powerupBlue_bolt.png": "res://Assets/kenney_space-shooter-redux/PNG/Power-ups/powerupBlue_bolt.png",
 		"powerupBlue_shield.png": "res://Assets/kenney_space-shooter-redux/PNG/Power-ups/powerupBlue_shield.png",
@@ -275,6 +277,7 @@
 		"prop-planet-big.png": "res://Assets/space_background_pack/space_background_pack/Assets/Blue Version/layered/prop-planet-big.png",
 		"prop-planet-small.png": "res://Assets/space_background_pack/space_background_pack/Assets/Blue Version/layered/prop-planet-small.png",
 		"purple.png": "res://Assets/kenney_space-shooter-redux/Backgrounds/purple.png",
+		"ring.png": "res://Assets/Black Hole/ring.png",
 		"sample.png": "res://Assets/kenney_space-shooter-redux/sample.png",
 		"scratch1.png": "res://Assets/kenney_space-shooter-redux/PNG/Parts/scratch1.png",
 		"scratch2.png": "res://Assets/kenney_space-shooter-redux/PNG/Parts/scratch2.png",
@@ -444,6 +447,9 @@
 		"patch_instructions_builder": {
 
 		},
+		"plugin": {
+
+		},
 		"retry_handler": {
 
 		},
@@ -457,7 +463,7 @@
 
 		},
 		"space_ship": {
-
+			"rotation_speed": "float"
 		},
 		"static_analyzer": {
 
@@ -471,6 +477,12 @@
 		"background": {
 			"path": "res://Scenes/background.tscn",
 			"scripts": []
+		},
+		"black_hole": {
+			"path": "res://Scenes/black_hole.tscn",
+			"scripts": [
+				"Float"
+			]
 		},
 		"code_patch_viewer": {
 			"path": "res://addons/gazeai/ui/code_patch_viewer.tscn",
@@ -562,9 +574,12 @@
 		"level_1": "res://Scripts/Levels/level_1.gd",
 		"level_2": "res://Scripts/Levels/level_2.gd",
 		"level_3": "res://Scripts/Levels/level_3.gd",
+		"level_4": "res://Scripts/Levels/level_4.gd",
+		"level_5": "res://Scripts/Levels/level_5.gd",
 		"main_panel": "res://addons/gazeai/ui/main_panel.gd",
 		"matereos": "res://Scripts/matereos.gd",
 		"patch_instructions_builder": "res://addons/gazeai/core/agents/patch_instructions_builder.gd",
+		"plugin": "res://addons/health_bar_x/plugin.gd",
 		"retry_handler": "res://addons/gazeai/core/networking/retry_handler.gd",
 		"settings": "res://addons/gazeai/core/config/settings.gd",
 		"smart_node_generator": "res://addons/gazeai/core/operations/smart_node_generator.gd",
@@ -586,6 +601,19 @@
 		"GazeAIPatchHandler": [],
 		"GazeAISyntaxValidator": [],
 		"GravityDrag": [],
+		"HealthBarX2D": [
+			"value_change_started",
+			"value_changed",
+			"value_change_finished"
+		],
+		"HealthBarXControl": [
+			"value_change_started",
+			"value_changed",
+			"value_change_finished"
+		],
+		"HealthBarXDraw": [],
+		"HealthBarXEnums": [],
+		"HealthBarXStyle": [],
 		"PatchApplier": [],
 		"PatchGenerator": [],
 		"PatchPlanner": [],
@@ -604,6 +632,7 @@
 		"main_panel": [],
 		"matereos": [],
 		"patch_instructions_builder": [],
+		"plugin": [],
 		"retry_handler": [],
 		"settings": [],
 		"smart_node_generator": [],
